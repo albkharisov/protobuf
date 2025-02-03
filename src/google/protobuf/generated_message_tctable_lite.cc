@@ -1286,7 +1286,7 @@ bool TcParser::ChangeOneof(const TcParseTableBase* table,
                            uint32_t field_num, ParseContext* ctx,
                            MessageLite* msg) {
   // The _oneof_case_ array offset is stored in the first aux entry.
-  uint32_t oneof_case_offset = table->field_aux(0u)->offset;
+  uint32_t oneof_case_offset = table->field_aux((uint32_t)0)->offset;
   // The _oneof_case_ array index is stored in the has-bit index.
   uint32_t* oneof_case =
       &TcParser::RefAt<uint32_t>(msg, oneof_case_offset) + entry.has_idx;

@@ -44,7 +44,7 @@ struct StructDefaultTypeInternal {
     Struct _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StructDefaultTypeInternal _Struct_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StructDefaultTypeInternal _Struct_default_instance_;
 PROTOBUF_CONSTEXPR Value::Value(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.kind_)*/{}
