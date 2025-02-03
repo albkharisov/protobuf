@@ -462,7 +462,7 @@ int64_t CodedInputStream::ReadVarint32Fallback(uint32_t first_byte_or_zero) {
       (buffer_end_ > buffer_ && !(buffer_end_[-1] & 0x80))) {
     GOOGLE_DCHECK_NE(first_byte_or_zero, 0)
         << "Caller should provide us with *buffer_ when buffer is non-empty";
-    uint32_t temp;
+    uint32_t temp{};
     ::std::pair<bool, const uint8_t*> p =
         ReadVarint32FromArray(first_byte_or_zero, buffer_, &temp);
     if (!p.first) return -1;
