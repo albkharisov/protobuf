@@ -856,7 +856,7 @@ const char* WireFormat::_InternalParseAndMergeField(
 
         case FieldDescriptor::TYPE_ENUM: {
           auto rep_enum =
-              reflection->MutableRepeatedFieldInternal<int>(msg, field);
+              reflection->MutableRepeatedFieldInternal<int32_t>(msg, field);
           bool open_enum = false;
           if (field->file()->syntax() == FileDescriptor::SYNTAX_PROTO3 ||
               open_enum) {
@@ -1294,7 +1294,7 @@ uint8_t* WireFormat::InternalSerializeField(const FieldDescriptor* field,
       HANDLE_PRIMITIVE_TYPE(SINT64, int64_t, SInt64, Int64)
       HANDLE_PRIMITIVE_TYPE(UINT32, uint32_t, UInt32, UInt32)
       HANDLE_PRIMITIVE_TYPE(UINT64, uint64_t, UInt64, UInt64)
-      HANDLE_PRIMITIVE_TYPE(ENUM, int, Enum, Enum)
+      HANDLE_PRIMITIVE_TYPE(ENUM, int32_t, Enum, Enum)
 
 #undef HANDLE_PRIMITIVE_TYPE
 #define HANDLE_PRIMITIVE_TYPE(TYPE, CPPTYPE, TYPE_METHOD, CPPTYPE_METHOD)      \
